@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>test1</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <script>
+      function postToGoogle() {
+        var fname = $('#fname').val();
+        $.ajax({
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSfXWfbIHi5JC4Yv6J_NXK4IIE6w7VkCfDQkMFJhQxqmRYxFbg/formResponse",
+          data: { "entry.2044927072": fname},
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() { alert("status 0"); },
+            200: function() { alert("status 200"); },
+          },
+        });
+        alert("you clicked it");
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="hello">Hello, world!</h1>
+
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfXWfbIHi5JC4Yv6J_NXK4IIE6w7VkCfDQkMFJhQxqmRYxFbg/formResponse" target="_self" method="POST" id="mG61Hd">
+      <input id="fname" type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="first name" aria-describedby="i.desc.1371652171 i.err.1371652171" name="entry.2044927072" value="" dir="auto" data-initial-dir="auto" data-initial-value="">
+
+      <button onclick="postToGoogle()" type="button">Submit</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  </body>
+</html>
